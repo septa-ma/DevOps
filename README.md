@@ -1,4 +1,4 @@
-#MUST KNOW COMMANDS:
+# MUST KNOW COMMANDS:
 
 - 1- cd directory-name -> change the directory
 
@@ -30,7 +30,7 @@ directory
 
 - 14- whoami -> show the current user
 
-#HOW TO CREATE A SELL SCRIPT?
+# HOW TO CREATE A SELL SCRIPT?
 
 - 1- create a directory:
 	 mkdire directory-name
