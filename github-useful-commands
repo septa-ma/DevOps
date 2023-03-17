@@ -1,4 +1,4 @@
-# 1- SETUP
+#1- SETUP
 - git config --global user.name “[firstname lastname]”
 set a name that is identifiable for credit when review version history
 - git config --global user.email “[valid-email]”
@@ -6,13 +6,13 @@ set an email address that will be associated with each history marker
 - git config --global color.ui auto
 set automatic command line coloring for Git for easy reviewing
 
-# 2- SETUP & INIT
+#2- SETUP & INIT
 - git init
 initialize an existing directory as a Git repository
 - git clone [url]
 retrieve an entire repository from a hosted location via URL
 
-# 3- STAGE & SNAPSHOT
+#3- STAGE & SNAPSHOT
 - git status
 show modified files in working directory, staged for your next commit
 - git add [file]
@@ -26,7 +26,7 @@ diff of what is staged but not yet committed
 - git commit -m “[descriptive message]”
 commit your staged content as a new commit snapshot
 
-# 4- BRANCH & MERGE
+#4- BRANCH & MERGE
 - git branch
 list your branches. a * will appear next to the currently active branch
 - git branch [branch-name]
@@ -50,13 +50,13 @@ Transmit local branch commits to the remote repository branch
 - git pull
 fetch and merge any commits from the tracking remote branch
 
-# 6- REWRITE HISTORY
+#6- REWRITE HISTORY
 - git rebase [branch]
 apply any commits of current branch ahead of specified one
 - git reset --hard [commit]
 clear staging area, rewrite working tree from specified commit
 
-# 7- TRACKING PATH CHANGES
+#7- TRACKING PATH CHANGES
 - git rm [file]
 delete the file from project and stage the removal for commit
 - git mv [existing-path] [new-path]
@@ -64,4 +64,4 @@ change an existing file path and stage the move
 - git log --stat -M
 show all commit logs with indication of any paths that moved 
 
-for more information you can read this: https://education.github.com/git-cheat-sheet-education.pdf
+**for more information you can read this: https://education.github.com/git-cheat-sheet-education.pdf**
