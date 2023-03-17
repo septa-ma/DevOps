@@ -1,4 +1,5 @@
 # this repo consists of:
+- 0- github commands
 - 1- linux basic commands must know.
 - 2- bash-script examples.
 - 3- what are dockerfile and docker-compose and how to write.
