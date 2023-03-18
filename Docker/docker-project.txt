@@ -1,0 +1,70 @@
+0- container?
+    • a docker container is a running instance of a docker image, and it is completely well isolated from other containers and its host machine.
+
+1- Docker?
+    • it is a way of creating a container from an application. With Docker, you can manage your infrastructure in the same ways you manage your applications.
+
+2- Docker image?
+    • a docker image is a snapshot of the file system and application dependencies. It is an executable package of software that includes everything needed like application code, libraries, tools, dependencies, and other files to run an application. 
+
+3- Dockerfile?
+    • it is a simple text file with instructions to build an image. Docker can build images automatically by reading the instructions given in a Dockerfile. In a Dockerfile Everything on left is INSTRUCTION, and on right is an ARGUMENT to those instructions.
+
+    • Dockerfile instructions and their explanation:
+        a) FROM -> To specify the base image which can be pulled from a container registry( Docker hub, GCR, Quay, ECR, etc).
+        b) RUN -> Executes commands during the image build process.
+        c) ENV -> Sets environment variables inside the image. It will be available during build time as well as in a running container. If you want to set only build-time variables, use ARG instruction.
+        d) COPY -> Copies local files and directories to the image.
+        e) EXPOSE -> Specifies the port to be exposed for the Docker container.
+        f) ADD -> It is a more feature-rich version of the COPY instruction. It also allows copying from the URL that is the source and tar file auto-extraction into the image. However, usage of COPY command is recommended over ADD. If you want to download remote files, use curl or get using RUN.
+        g) WORKDIR -> Sets the current working directory. You can reuse this instruction in a Dockerfile to set a different working directory. If you set WORKDIR, instructions like RUN, CMD, ADD, COPY, or ENTRYPOINT gets executed in that directory.
+        h) VOLUME -> It is used to create or mount the volume to the Docker container.
+        i) USER -> Sets the user name and UID when running the container. You can use this instruction to set a non-root user of the container.
+        j) LABEL -> It is used to specify metadata information of Docker image.
+        k) ARG -> Is used to set build-time variables with key and value. the ARG variables will not be available when the container is running. If you want to persist a variable on a running container, use ENV.
+        l) CMD -> It is used to execute a command in a running container. There can be only one CMD, if multiple CMD there then it only applies to the last one. It can be overridden from the Docker CLI.
+        m) ENTRYPOINT -> Specifies the commands that will execute when the Docker container starts. If you don’t specify any ENTRYPOINT, it defaults to /bin/sh -c. You can also override ENTRYPOINT using the --entrypoint flag using CLI. Please refer CMD vs ENTRYPOINT for more information.
+
+    • Some of the Dockerfile practices which we should follow:
+        a) Use a .dockerignore file to exclude unnecessary files and directories to increase the build’s performance.
+        b) Use trusted base images only and keep updating the images periodically.
+        c) Each instruction in the Dockerfile adds an extra layer to the Docker image. Minimize the number of layers by consolidating the instructions to increase the build’s performance and time.
+        d) Run as a Non-Root User to avoid security breaches.
+        e) Keep the image small: Reduce the image size for faster deployment and avoid installing unnecessary tools in your image. Use minimal images to reduce the attack surface.
+        f) Use specific tags over the latest tag for the image to avoid breaking changes over time.
+        g) Avoid using multiple RUN commands as it creates multiple cacheable layers which will affect the efficiency of the build process.
+        h) Never share or copy the application credentials or any sensitive information in the Dockerfile. If you use it, add it to .dockerignore .
+        i) Use EXPOSE and ENV commands as late as possible in Dockerfile.
+        j) Use a linter: Use a linter like hadolint to check your Dockerfile for common issues and best practices
+        k) Use a single process per container: Each container should run a single process. This makes it easier to manage and monitor containers, and helps to keep containers lightweight.
+        l) Use multi-stage builds: Use multi-stage builds to create smaller and more efficient images.
+
+
+4- Docker-compose?
+    • Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. it works in all environments: production, staging, development, testing, as well as CI workflows.
+      
+    • Using Compose is basically a three-step process:
+		1. Define your app’s environment with a Dockerfile so it can be reproduced anywhere.
+		2. Define the services that make up your app in docker- compose.yml so they can be 
+		run together in an isolate environment.
+		3. Run docker compose up and the Docker compose command starts and runs your entire app. 
+		You can alternatively run docker-compose up using the docker-compose binary.
+
+5- Commands that We Commonly Use:
+    a) To see images = docker images / docker image ls
+    b) To create image = docker create
+    c) To remove image = docker rmi
+    d) To list running containers = docker ps
+    e) To list all containers = docker ps -a
+    f) To run container by using image = docker run -it -d
+    g) To stop container = docker stop
+    h) To kill container = docker kill
+    i) To remove container = docker rm
+    j) To start container = docker start
+    k) To start container & show output = docker start -a
+    l) To run docker = docker create + docker start
+    m) To removing all stopped containers = docker system prune
+    n) To retrieving log outputs = docker logs
+    o) To interact with container to cmd prompt = docker exec -it sh
+    p) To set tag = docker build -t . (@ current folder)
+    q) To search = docker search

@@ -31,55 +31,55 @@ directory
 - 14- whoami -> show the current user
 
 
-file-system structure:
+# file-system structure:
 
-1- / (root filesystem)
+- 1- / (root filesystem)
   The root filesystem is the top-level directory of the filesystem. It must contain all of the files required 
   to boot the Linux system before other filesystems are mounted. It must include all of the required executables 
   and libraries required to boot the remaining filesystems. After the system is booted, all other filesystems are
   mounted on standard, well-defined mount points as subdirectories of the root filesystem.
 
-2- /bin
+- 2- /bin
   This is where the executable files are located. These files are available to all users
 
-3- /dev
+- 3- /dev
   These are device drivers
 
-4- /etc
+- 4- /etc
   Supervisor directory commands, configuration files, disk configuration files, valid user lists, groups, ethernet, hosts, where to send critical messages
 
-5- /lib
+- 5- /lib
   Contains shared library files and sometimes other kernel-related files
 
-6- /boot
+- 6- /boot
   Contains files for booting the system
 
-7- /home
+- 7- /home
   Contains the home directory for users and other accounts
 
-8- /mnt
+- 8- /mnt
   Used to mount other temporary file systems, such as cdrom and floppy for the CD-ROM drive and floppy diskette drive, respectively
 
-9- /proc
+- 9- /proc
   Contains all processes marked as a file by process number or other information that is dynamic to the system
 
-10- /tmp
+- 10- /tmp
   Holds temporary files used between system boots
 
-11- /usr
+- 11- /usr
   Used for miscellaneous purposes, and can be used by many users. Includes administrative commands, shared files, library files, and others
 
-12- /var
+- 12- /var
   Typically contains variable-length files such as log and print files and any other type of file that may contain a variable amount of data	
 
-13- /sbin
+- 13- /sbin
   Contains binary (executable) files, usually for system administration. For example, fdisk and ifconfig utlities	
 
-14- /opt
+- 14- /opt
   Optional files such as vendor supplied application programs should be located here.
 
-15- /media
+- 15- /media
   A place to mount external removable media devices such as USB thumb drives that may be connected to the host.
 
-16- /kernel
+- 16- /kernel
   Contains kernel files
