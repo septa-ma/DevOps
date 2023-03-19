@@ -1,4 +1,5 @@
 
+1- What is a Jenkins pipeline?
 
 a pipeline is defined as a series of events or tasks which are interconnected 
 in a particular order. Jenkins pipeline is a set of modules or plugins which 
@@ -6,21 +7,23 @@ enable the implementation and integration of Continuous Delivery pipelines
 within Jenkins. 
 states of Continuous Delivery in Jenkins pipeline: Build, Deploy, Test, Release
 
-1- Pipeline:
+2- Jenkins Pipeline Concepts:
+
+a- Pipeline:
     It is a user-defined framework that includes all the processes like create, 
     check, deploy, etc. In a Jenkinsfile, it’s a list of all the levels. All of 
     the stages and steps within this block are described. This is the fundamental 
     block to the syntax of a declarative pipeline.
     EX: pipeline  {  }
 
-2- Node:
+b- Node:
     A node is a system running a complete workflow. It’s an integral part of the 
     syntax of the scripted pipeline.
     EX: node  {  }
 
     Some standard sections are available to both declarative and scripted 
     pipelines. These are:
-    a- Agent:
+    - Agent:
         An agent is described as a directive that can run multiple builds using
         just one Jenkins instance. This feature helps spread the workload to 
         various agents and execute multiple projects within Jenkins’s single 
@@ -49,7 +52,7 @@ states of Continuous Delivery in Jenkins pipeline: Build, Deploy, Test, Release
                 be used to pull an image of Ubuntu. This image can now be used 
                 to run multiple commands as an execution environment.
         
-    b- Stages:
+    - Stages:
         This section includes all of the work that needs to be completed. 
         The work is defined in the form of stages. Within this Directive, 
         there may be more than one level. Each stage executes a particular task.
@@ -75,7 +78,7 @@ states of Continuous Delivery in Jenkins pipeline: Build, Deploy, Test, Release
                 }           
             }
     
-    c- Steps:
+    - Steps:
         Within a stage block, the pipeline can be described as a series of steps. 
         Such steps are performed in sequence for the execution of a level. Within 
         a Steps guideline, there must be at least one step. 
