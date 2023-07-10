@@ -1,0 +1,38 @@
+What is Kafka?
+it is a messaging system that uses for managing complex pipeline in the system.
+
+Kafka’s important keys?
+Broker: each node in a Kafka cluster is a broker
+Producer: each program which write on Kafka
+Consumer: each program which read from Kafka
+Topic: is a queue which published messages stored in
+Partition: small category inside Topic
+Zookeeper: Kafka cluster management system
+
+Why do we need Kafka?
+Kafka is fast, scalable, durable, fault-tolerant, distributed design so it is a good messaging system for complex projects.
+
+How to use Kafka (single node scenario)?
+-Install docker-engine -> apt install docker.io
+-Install docker-compose -> apt install docker-compose
+-Make “docker-compose.yml” for making images. docker-compose is in the last page.
+-Checking if images up or not -> docker ps -a
+-Be sure that 2 containers can ping each other -> docker exec cont-name ping ip-add
+-If you can’t use the above command, try these:
+Firstly, enter to the container -> docker exec -it cont-name bash then install ping package -> apt-get update && apt-get install -y iputils-ping
+Second way, if you don’t have access to install any packages on container or you don’t want to install anything on your container use this command -> docker top cont-name (copy PID) then by this command check your connection from your host -> nsenter -t PID -n (any command, EX: ping …) 
+-Enter into the container -> docker exec -it cont-name bash and make a Topic and then test messaging between producer and consumer. For testing your Kafka cluster use this source:
+https://docs.bitnami.com/aws/infrastructure/kafka/administration/run-producer-consumer/
+
+Important docker commands:
+docker ps (-a)
+docker-compose build 
+docker-compose up -d
+docker network ls
+docker inspect cont-name
+docker network inspect cont-name
+docker stop cont-name
+docker network create -d bridge myNetwork
+docker top cont-name
+nsenter -t PID -n your-command
+

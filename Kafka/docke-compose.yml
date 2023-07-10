@@ -1,0 +1,30 @@
+version: '2'
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: bitnami/zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+    restart: "always"
+    ports:
+      - 2181:2181
+    network_mode: mynet
+  kafka:
+    container_name: kafka
+    image: bitnami/kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+    restart: "always"
+    network_mode: mynet
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_LISTENERS: PLAINTEXT://:9092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://127.0.0.1:9092
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+      KAFKA_ENABLE_KRAFT: "no"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
