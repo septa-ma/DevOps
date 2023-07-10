@@ -19,8 +19,8 @@
     - Checking if images up or not -> docker ps -a
     - Be sure that 2 containers can ping each other -> docker exec cont-name ping ip-add
     - If you can’t use the above command, try these:
-        Firstly, enter to the container -> docker exec -it cont-name bash then install ping package -> apt-get update && apt-get install -y iputils-ping
-        Second way, if you don’t have access to install any packages on container or you don’t want to install anything on your container use this command -> docker top cont-name (copy PID) then by this command check your connection from your host -> nsenter -t PID -n (any command, EX: ping …) 
+        - Firstly, enter to the container -> docker exec -it cont-name bash then install ping package -> apt-get update && apt-get install -y iputils-ping
+        - Second way, if you don’t have access to install any packages on container or you don’t want to install anything on your container use this command -> docker top cont-name (copy PID) then by this command check your connection from your host -> nsenter -t PID -n (any command, EX: ping …) 
     - Enter into the container -> docker exec -it cont-name bash and make a Topic and then test messaging between producer and consumer. For testing your Kafka cluster use this source:
     https://docs.bitnami.com/aws/infrastructure/kafka/administration/run-producer-consumer/
 
