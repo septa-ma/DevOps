@@ -16,6 +16,7 @@ services:
     image: bitnami/kafka:latest
     depends_on:
       - zookeeper
+      
     ports:
       - 9092:9092
     restart: "always"
