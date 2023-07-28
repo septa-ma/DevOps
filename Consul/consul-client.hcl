@@ -14,7 +14,7 @@ datacenter = "my-dc-1"
 # cluster state. Additionally, the directory must support the use of filesystem
 # locking, meaning some types of mounted folders (e.g. VirtualBox shared folders) may
 # not be suitable.
-data_dir = "/opt/consul"
+data_dir = "/data/consul"
 
 # client_addr
 # The address to which Consul will bind client interfaces, including the HTTP and DNS
