@@ -23,3 +23,10 @@
        
 - 3- what are dockerfile and docker-compose and how to write.
 - 4- how to write pipline for make CI/CD.
+- 5- what is kafka?
+- 6- what is Consul?
+
+- ci/cd?
+- tagging?
+- versioning?
+- multi enviroment?

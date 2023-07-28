@@ -1,0 +1,38 @@
+0- What is Consul?
+    Consul is a service networking platform that encompasses multiple capabilities to secure and simplify network service management. These capabilities include service mesh, service discovery, configuration management, and API gateway functionality, also enables teams to manage secure network connectivity between services and across on-prem and multi-cloud environments and runtimes.
+    It provides a control plane that enables you to register, query, and secure services deployed across your network. The control plane is part of the network infrastructure that maintains a central registry to track services and their respective IP addresses. It is a distributed system that runs on clusters of nodes, such as physical servers, cloud instances, virtual machines, or containers.
+
+1- Why do we need it?
+    Consul increases application resilience, bolsters uptime, accelerates application deployment, and improves security across service-to-service communications.
+    It automates service discovery by replacing service connections usually handled with load balancers with an identity-based service catalog.
+    For more information about consul use this site: https://developer.hashicorp.com/
+
+2- Consul's resource requirements?
+    Size	CPU		Memory	Disk Capacity	Disk IO		Disk Throughput
+    Small	2-4 core	8-16 GB RAM	100+ GB	3000+ IOPS	75+ MB/s
+    Large	8-16 core	32-64 GB RAM	200+ GB	7500+ IOPS	250+ MB/s
+
+3- In server-side:
+ - installing in ubuntu -> apt install consul=1.15.2-1
+ - Edit consul-server.hcl or json on /etc/consul.hcl path (check consul-server.hcl file)
+ - Now enable service and check the status: systemctl enable consul, systemctl status consul 
+
+4- In client-side:
+    - Open these ports (8300, 8301, 8302, 8500, 8600) from client to server
+    - With this command check the connection from client: telnet server-node-Ip port-number
+    - In Linux or windows client server we should install consul agent 
+    - Make a consul folder and on that 2 other folders with the name of (config and data)
+    - Extract or move consul.exe on consul folder
+    - Add consul-client.hcl or json on config folder (check consul-client.hcl file)
+    - If install completed successfully data folder will change with new files.
+    - Go to the services and start the consul service.
+
+5- After these steps:
+    - Add key/value in consul server
+    - Test this command in client side “consul kv get -recurse”
+
+6- Some important consul commands:
+    - Consul members -> check all nodes in cluster
+    - Consul monitor -> monitoring service in each side
+    - Consul kv get -recurse -> check all key/value in server
+    - Aslo this website is good for commands: https://developer.hashicorp.com/consul/commands
